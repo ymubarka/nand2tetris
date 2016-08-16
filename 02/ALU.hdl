@@ -56,8 +56,7 @@ CHIP ALU {
       Mux16(a=AndXY,b=XpY,sel=f,out=MuxAndp);
    Not16(in=MuxAndp,out=NegateOut);
       Mux16(a=MuxAndp,b=NegateOut,sel=no,out=out1,out[15]=banana);
-      And16(a=out1,b=true,out=compare);
-      Not(in=compare,out=zr);
+//use Or8Way to find zr. you cant use the sub-bus here so you need to get each pin individually out of the line above.
    And(a=banana,b=true, out=ng);
 
 
